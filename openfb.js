@@ -4,7 +4,7 @@
  * This library has no dependency: You don't need (and shouldn't use) the Facebook SDK with this library. Whe running in
  * Cordova, you also don't need the Facebook Cordova plugin. There is also no dependency on jQuery.
  * OpenFB allows you to login to Facebook and execute any Facebook Graph API request.
- * @author Christophe Coenraets @ccoenraets
+ * @author Christophe Coenraets @ccoenraetsl
  * @version 0.4
  */
 var openFB = (function () {
@@ -187,7 +187,7 @@ var openFB = (function () {
         tokenStore.removeItem('fbtoken');
 
         if (token) {
-            logoutWindow = window.open(FB_LOGOUT_URL + '?access_token=' + token + '&next=' + logoutRedirectURL, '_blank', 'location=no');
+            logoutWindow = window.open(FB_LOGOUT_URL + '?access_token=' + token + '&next=' + logoutRedirectURL, '_blank', 'location=no,clearcache=yes');
             if (runningInCordova) {
                 setTimeout(function() {
                     logoutWindow.close();
